@@ -3,220 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Builder</title>
+    <title>Login</title>
+    <base href="/src/pages/" />
     <link rel="stylesheet" href="../../dist/output.css" />
   </head>
-  <body class="rtl-direction">
-    <header>
-      <nav>
-        <div class="nav--features">
-          <a href="#">
-            <img src="../images/soroush.png" alt="soroush logo" />
-          </a>
-
-          <div class="nav--features--buttons">
-            <a href="#" class="btn btn-solid">
-              <img src="../images/eye.svg" alt="eye icon" class="icon" />
-            </a>
-            <a href="#" class="btn btn-solid">
-              <img src="../images/home.svg" alt="home icon" class="icon" />
-            </a>
-            <a href="#" class="btn btn-solid">
-              <img src="../images/send.svg" alt="send icon" class="icon" />
-            </a>
-            <a
-              href="#"
-              class="btn btn-solid block md:hidden"
-              id="toggle-template"
-            >
-              <img
-                src="../images/template.svg"
-                alt="templeta icon"
-                class="icon"
-              />
-            </a>
-          </div>
+  <body
+    class="bg-gray-300 h-full w-screen grid place-items-center items-center min-h-screen font-vazir"
+  >
+    <div class="w-full max-w-[700px] flex flex-col gap-4">
+      <div class="flex flex-col self-center">
+        <img
+          class="rounded-full h-10 w-10 self-center"
+          src="../images/soroushPlusLogo.svg"
+          alt=""
+        />
+        <p class="self-center">صفحه ساز سروش پلاس</p>
+      </div>
+      <form
+        class="bg-white h-full w-[90%] self-center rounded-2xl flex flex-col justify-center gap-6 p-4"
+      >
+        <h1 class="self-center">اطلاعات طراحی صفحه</h1>
+        <div class="flex flex-col items-start">
+          <label class="self-end text-sm pr-1 mb-2" for="title">
+            عنوان صفحه خود را ورد کنید</label
+          >
+          <input
+            dir="rtl"
+            placeholder="عنوان صفحه"
+            class="self-end border-[1px] border-lightborder rounded-lg h-[40%] w-full p-4"
+            type="text"
+            id="title"
+          />
+          <span class="self-end text-hover text-sm pr-1 my-2">
+            است Html عنوان صفحه ، تگ عنوان</span
+          >
         </div>
-        <div class="nav--page-title">نام صفحه</div>
-        <div class="nav--control-buttons">
-          <a href="#" class="btn btn-solid">
-            <img src="../images/redo.svg" alt="undo icon" class="icon" />
-          </a>
-          <a href="#" class="btn btn-solid">
-            <img src="../images/undo.svg" alt="redo icon" class="icon" />
-          </a>
-          <button class="btn btn-solid block sm:hidden" id="toggle-setting">
-            <img src="../images/menu.svg" alt="menu icon" class="icon" />
-          </button>
-        </div>
-      </nav>
-    </header>
-    <main class="relative w-full">
-      <section id="templates" class="side-bar">
-        <h3 class="mb-4 mt-3 whitespace-nowrap">قالب ها</h3>
-        <div class="templates--wrapper"></div>
-      </section>
-
-      <section id="page-builder" class="mx-auto">
         <div
-          id="main-wrapper"
-          class="main-wrapper flex relative top-1/2 -translate-y-1/2"
+          class="flex flex-col justify-end sm:flex-row gap-0 sm:gap-6 self-end w-full"
         >
-          <div>
-            <div class="middle-div">
-              <a class="upload-section">
-                <div class="upload-section--plus">
-                  <img src="../images/plus-sign.svg" alt="plus sign" />
-                </div>
-                <p class="text-blue-500">افزودن عکس</p>
-              </a>
-            </div>
-            <button class="btn-under">+ افزودن صفحه</button>
+          <div class="flex flex-col w-full">
+            <label class="text-sm self-end pr-1 mb-2" for="eng"
+              >نام صفحه خود را وارد کنید (انگلیسی)</label
+            >
+            <input
+              dir="rtl"
+              placeholder="Page Name"
+              id="eng"
+              class="self-end border-[1px] border-lightborder rounded-lg h-[40%] w-full p-5"
+              type="text"
+            />
           </div>
-          <div class="flex-col flex mr-3 gap-3">
-            <button class="btn-middle">
-              <img src="../images/pen.png" alt="pen" />
-            </button>
-            <button class="btn-middle">
-              <img src="../images/up.png" alt="up" />
-            </button>
-            <button class="btn-middle">
-              <img src="../images/down.png" alt="down" />
-            </button>
-            <button class="btn-middle">
-              <img src="../images/lock.png" alt="lock" />
-            </button>
-            <button class="btn-middle">
-              <img src="../images/trash.png" alt="trash" />
-            </button>
+          <div class="flex flex-col w-full">
+            <label class="text-sm self-end pr-1 mb-2" for="per"
+              >نام صفحه خود را وارد کنید (فارسی)</label
+            >
+            <input
+              dir="rtl"
+              placeholder="نام صفحه"
+              id="per"
+              class="self-end border-[1px] border-lightborder rounded-lg h-[40%] w-full p-5"
+              type="text"
+            />
           </div>
         </div>
-      </section>
-
-      <!-- Left side-bar using for setting -->
-      <section id="setting" class="setting side-bar">
-        <p class="font-bold mt-4">ساختار</p>
-        <div id="align-buttons">
-          <button class="btn btn-solid">
-            <img
-              src="../images/align-bottom.svg"
-              alt="align bottom icon"
-              class="icon"
-            />
-          </button>
-          <button class="btn btn-solid">
-            <img
-              src="../images/align-horizontally.svg"
-              alt="align bottom icon"
-              class="icon"
-            />
-          </button>
-          <button class="btn btn-solid">
-            <img
-              src="../images/align-left.svg"
-              alt="align bottom icon"
-              class="icon"
-            />
-          </button>
-          <button class="btn btn-solid">
-            <img
-              src="../images/align-right.svg"
-              alt="align bottom icon"
-              class="icon"
-            />
-          </button>
-          <button class="btn btn-solid">
-            <img
-              src="../images/align-vertically.svg"
-              alt="align bottom icon"
-              class="icon"
-            />
-          </button>
-          <button class="btn btn-solid">
-            <img
-              src="../images/linear-frame.svg"
-              alt="align bottom icon"
-              class="icon"
-            />
-          </button>
+        <div
+          class="flex justify-start flex-row-reverse gap-2 relative right-6 bottom-5"
+        >
+          <input class="" type="checkbox" />
+          <p>در طراحی نمایش داده شود</p>
         </div>
 
-        <a class="upload-section">
-          <div class="upload-section--plus">
-            <img src="../images/plus-sign.svg" alt="plus sign" />
-          </div>
-          <p class="text-blue-500">افزودن عکس</p>
-          <p class="text-xs text-gray-500 whitespace-nowrap">
-            حجم عکس تا ۵ مگابایت و بافرمت JPG, PNG
-          </p>
+        <a
+          href="./page-builder.html"
+          class="bg-blue-600 w-[90%] p-3 rounded-xl text-white text-center mx-auto"
+        >
+          ذخیره و شروع طراحی
         </a>
-
-        <div class="setter">
-          <label class="setter--title">فاصله بین ستون ها</label>
-          <input class="setter--value" />
-        </div>
-
-        <div class="setter">
-          <label class="setter--title">ارتفاع</label>
-          <input class="setter--value" />
-        </div>
-
-        <div class="setter">
-          <label class="setter--title">حاشیه</label>
-          <input class="setter--value" />
-        </div>
-
-        <div class="setter">
-          <label class="setter--title">فاصله گذاری</label>
-          <input class="setter--value" />
-        </div>
-
-        <div class="setter">
-          <label class="setter--title">گوشه ها</label>
-          <input class="setter--value" />
-        </div>
-
-        <div class="setter relative">
-          <label class="setter--title"> ساختار</label>
-
-          <button
-            class="btn btn-solid w-10 h-10 justify-center inline-flex items-center"
-          >
-            <img
-              src="../images/down-arrow.svg"
-              alt="down arrow icon for dropdown"
-            />
-          </button>
-          <ul
-            class="absolute hidden transition duration-300 top-10 pt-1 w-full bg-white shadow-lg"
-          >
-            <li>
-              <a
-                class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                href="#"
-                >Option 1</a
-              >
-            </li>
-            <li>
-              <a
-                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                href="#"
-                >Option 2</a
-              >
-            </li>
-            <li>
-              <a
-                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                href="#"
-                >Option 3</a
-              >
-            </li>
-          </ul>
-        </div>
-      </section>
-    </main>
-
-    <script src="../js/templateCreator.js" type="module"></script>
-    <script src="../js/scripts.js"></script>
+      </form>
+    </div>
   </body>
 </html>
