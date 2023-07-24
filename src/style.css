@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: vazir;
+  src: url("../public/fonts/Vazir.ttf");
+}
+
+@layer base {
+  body {
+    @apply bg-gray-300 font-vazir h-screen;
+  }
+
+  header {
+    @apply h-[56px] bg-white w-full shadow-xl shadow-gray-200 relative z-10;
+  }
+
+  nav {
+    @apply flex justify-between items-center h-full w-full px-4;
+  }
+
+  main {
+    @apply flex h-full justify-between;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+}
+
+@layer components {
+  .rtl-direction {
+    direction: rtl;
+  }
+
+  .btn {
+    @apply p-1 border border-gray-400 rounded-lg;
+    transition: background-color 300ms;
+  }
+
+  .btn-solid {
+    @apply hover:bg-gray-200;
+  }
+
+  .btn-full {
+    @apply w-full border border-gray-400 rounded-lg py-2 overflow-hidden;
+    transition: background-color 300ms;
+  }
+
+  .icon {
+    @apply w-5 h-5 sm:w-6 sm:h-6;
+  }
+
+  .side-bar {
+    @apply h-full bg-white relative shadow-xl shadow-gray-500;
+  }
+
+  .upload-section {
+    @apply border-2 border-dashed border-blue-400 flex justify-center items-center p-4 rounded-lg w-full h-fit flex-col space-y-2 cursor-pointer;
+  }
+
+  .setter {
+    @apply flex justify-between items-center;
+  }
+
+  .setter--value {
+    @apply text-center w-10 h-10 flex justify-center items-center border border-gray-400 rounded-lg focus:border-blue-900 focus:border-0;
+  }
+
+  .setter--title {
+    @apply whitespace-nowrap;
+  }
+
+  .main-wrapper {
+    @apply h-[95%] w-96 mx-auto px-2;
+  }
+
+  .middle-div {
+    @apply bg-white h-[90%] w-80 p-4 rounded;
+  }
+
+  .drag-drop {
+    @apply w-full h-28 bg-white border-dashed border-[2px] border-blue-600 rounded-md;
+  }
+
+  .btn-under {
+    @apply bg-gray-200 h-12 w-80 rounded-lg mt-2 text-blue-600 text-lg text-center border-2 border-white;
+  }
+
+  .btn-middle {
+    @apply bg-gray-200 h-8 w-8 border-[1px] border-white rounded-md text-center p-1;
+  }
+
+  @layer utilities {
+    .nav--control-buttons {
+      @apply flex gap-1 sm:gap-2;
+    }
+
+    .nav--page-title {
+      @apply text-blue-700;
+    }
+
+    .nav--features {
+      @apply flex gap-3 items-center;
+    }
+
+    .nav--features--buttons {
+      @apply flex gap-1 sm:gap-2;
+    }
+
+    #templates {
+      @apply w-0 md:w-36 md:p-4 overflow-x-hidden right-0 z-10 absolute md:relative;
+      transition: all 300ms;
+    }
+
+    #templates.open {
+      @apply w-40 p-4;
+    }
+
+    #setting {
+      @apply w-0 sm:w-[310px] sm:p-4 overflow-x-hidden overflow-y-auto space-y-5 left-0 absolute sm:relative;
+      transition: all 300ms;
+    }
+
+    #setting.open {
+      @apply w-[310px] p-4;
+    }
+
+    .templates--wrapper {
+      @apply flex flex-col justify-center items-center space-y-3;
+    }
+
+    #align-buttons {
+      @apply flex justify-between;
+    }
+  }
+}
